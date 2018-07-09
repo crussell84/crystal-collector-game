@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Exo|Special+Elite');
+body {
+    background-image: url("../images/dark-grey-terrazzo/dark-grey-terrazzo.png")
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+    padding: 15px 10px 10px;
+}
+
+p {
+    font-weight: 600;
+}
+
+h3, p {
+    font-family: 'Exo', sans-serif;
+}
+
