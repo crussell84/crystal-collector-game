@@ -9,10 +9,12 @@ var _currentScore = $("h3.score");
 var _wins = $("h3.wins");
 var _losses = $("h3.losses");
 
+//generate a random number between the min & max, inculsive
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
+//add 4 unique random numbers from 1 - 12 to the array
 function createCrystalArray() {
     while (crystalNums.length < 4){
         var num = getRndInteger(1,12);
@@ -22,6 +24,7 @@ function createCrystalArray() {
     }
 }
 
+//get the game in the correct state to start a new round
 function gameSetup() {
     crystalNums = [];
     createCrystalArray();
@@ -33,6 +36,7 @@ function gameSetup() {
     _losses.text("Losses: " + losses);
 }
 
+//the meaty logic bit to handle score tracking & win/loss condition
 function gameLogic(ind) {
     currentScore = currentScore + crystalNums[ind];
     if (currentScore < goal){
@@ -41,20 +45,18 @@ function gameLogic(ind) {
     else if (currentScore == goal) {
         wins++;
         alert("You win!");
-        console.log(wins);
         gameSetup();
     }
     else {
         losses++;
         alert("You lost!");
-        console.log(losses);
         gameSetup();
     }
 }
 
 gameSetup();
-console.log(crystalNums);
 
+//click handlers for the four images
 $(".firstCrystal").on("click", function(){
     gameLogic(0);
 });
@@ -70,7 +72,5 @@ $(".thirdCrystal").on("click", function(){
 $(".fourthCrystal").on("click", function(){
     gameLogic(3);
 });
-
-
 
 });
