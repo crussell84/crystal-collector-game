@@ -7,7 +7,7 @@
 - You win if your score equals the number given to you - you lose if you go over it!
 
 # View Live
-https://crussell84.github.io/crystal-collector-game/
+https://www.startwithaskateboard.com/crystal-collector-game/
 
 # Local Install
 - Clone/download the repo
